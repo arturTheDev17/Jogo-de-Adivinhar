@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da adivinhação</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="script.js" defer></script> <!-- defer faz carregar dps -->
+
+    <!--npx tailwindcss -i ./src/styles/style.css -o ./src/output.css --watch-->
+</head>
+<body>
+    <main >
+        
+        <div class="p-8 flex flex-col items-center justify-center h-[100vh] gap-y-16 select-none" id="menu">
+            <section class="flex flex-col items-center gap-y-8">
+                <h1 class="font-bold text-5xl" >Jogo da adivinhação!</h1>
+            
+                <div class="mt-8 flex flex-col items-center" >
+                    <span>Insira seu nome:</span>    
+                    <input class="bg-gray-400 rounded-lg mt-2 p-2" autocomplete="off" type="text" id="nome">    
+                </div>
+                <span id="dicaNome" class="font-semibold hidden" >O nome deve conter apenas letras e números, com no mínimo 3 caracteres.</span>
+                <button class="text-2xl bg-green-500 text-white font-bold py-4 px-8 rounded-full active:saturate-150"  id="botaoNome" >PRONTO!</button>
+    
+            </section>
+    
+            <section class="flex flex-col w-2/5 border-solid border-gray-400 border p-8">
+                <h2 class="font-bold text-3xl pb-4" >Placar de líderes: </h1>
+                <ol id="placar" class="text-2xl w-full flex flex-col gap-y-2" ></ol>
+            </section>
+            
+        </div>
+
+        <div class="p-8 flex-col items-center justify-center h-[100vh] gap-y-16 select-none hidden" id="jogo" >
+        
+            <section class="flex flex-col items-center gap-y-8">
+                <h1 class="font-bold text-5xl leading-snug text-center" >Tente adivinhar<br> um número de 1 a 100!</h1>
+            
+                <div class="flex-col items-center hidden" id="comecar" >
+                    <span>Insira aqui o número:</span>    
+                    <input class="bg-gray-400 rounded-lg mt-2 mb-6 p-2" autocomplete="off" type="text" id="numero">    
+                    <div class="hidden" id="divDica" >
+                        <span class="font-bold" >Dica: </span>
+                        <span id="dica"></span>
+                    </div>
+                </div>
+    
+                <button class="text-2xl bg-yellow-500 text-white font-bold py-4 px-8 rounded-full active:saturate-150"  id="botaoNumero" >Começar!</button>
+    
+        </div>
+
+        </main>
+</body>
+</html>
